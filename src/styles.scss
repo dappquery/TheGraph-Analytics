@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/style.scss";
+
+/* https://css-tricks.com/snippets/jquery/smooth-scrolling/ */
+html {
+  scroll-behavior: smooth;
+}

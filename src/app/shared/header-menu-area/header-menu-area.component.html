@@ -1,0 +1,99 @@
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container box_1620">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <!-- <a class="navbar-brand logo_h" href="/"> -->
+                <a href="/" class="dapp-logo">
+                    <app-svg-icon name='dappQueryLogo'></app-svg-icon>
+                </a>
+
+                <a href="{{constantsURLs.DISCORD}}" target="_blank">
+                    <app-svg-icon name='discordLogo'></app-svg-icon>
+                </a>
+
+                <a href="{{constantsURLs.SOCIAL_NETWORK_TWITTER}}" target="_blank">
+                    <app-svg-icon name='twitterLogo'></app-svg-icon>
+                </a>
+                <a href="{{constantsURLs.MEDIUM_BLOG}}" target="_blank">
+                    <app-svg-icon name='medium'></app-svg-icon>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav justify-content-center">
+                        <!-- <li class="nav-item active"><a class="nav-link" href="#feature_area"
+                                >{{commonLables.features}}</a>
+                        </li> -->
+                        <li class="nav-item"><a class="nav-link" href="/explorer">{{commonLables.explorer}}</a>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="/integration">{{commonLables.integration}}</a>
+                        </li> -->
+
+                        <!-- <li class="nav-item"><a class="nav-link" href="{{analyzerUrl}}">Analyze<app-svg-icon name="new"
+                                    class="new_icon"></app-svg-icon></a>
+                        </li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#pricing_area">{{commonLables.pricing}}</a> -->
+
+                        <!-- <li class="nav-item"><a class="nav-link" href="#contact_page" >{{commonLables.contact}}</a>
+                        </li> -->
+
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Resources <app-svg-icon name='arrowIcon'
+                                    class="menu-icon"></app-svg-icon></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="{{constantsURLs.MEDIUM_BLOG}}"
+                                        target="_blank">Blog</a>
+                                <li class="nav-item"><a class="nav-link" href="{{constantsURLs.DOCS}}"
+                                        target="_blank">Docs</a></li>
+                                <!-- <li class="nav-item"><a class="nav-link"
+                                        href="#contact_page">{{commonLables.contact}}</a>
+                                </li> -->
+                            </ul>
+                        </li>
+
+
+
+                        <li *ngIf="!isUserLoggedIn" class="nav-item"><a class="nav-link button-link"
+                                href="https://analytics.dappquery.com/browse/34/schema/thegraph_mainnet_network"
+                                target="_blank">Create
+                                Chart</a>
+                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link button-link" href="/login/"
+                                [innerHTML]='isUserLoggedIn ? "My Account" : "Login"'></a>
+                        </li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" routerLink="privacy" >privacy</a> </li> -->
+                        <!-- <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="price.html">Pricing</a>
+                                <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Blog</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                            </ul>
+                        </li> -->
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--================Header Menu Area =================-->

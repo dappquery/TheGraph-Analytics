@@ -1,0 +1,18 @@
+<app-logout-header></app-logout-header>
+
+<div class="tab-container">
+
+    <div class="tabs" [ngClass]="{
+        active: isTab1Active}" (click)="switchTab('tab1')">Indexer Dashboard</div>
+    <div class="tabs" [ngClass]="{
+        active: isTab2Active}" (click)="switchTab('tab2')">Delegrator Dashboard</div>
+    <div class="tabs" [ngClass]="{
+        active: isTab3Active}" (click)="switchTab('tab3')">Individual Indexer Dashboard</div>
+</div>
+
+<div class="user-dashboard-container">
+
+    <!-- <div allowfullscreen="allowfullscreen" > -->
+    <!-- <div> -->
+    <iframe [src]="dashboardUrl | safe"></iframe>
+</div>

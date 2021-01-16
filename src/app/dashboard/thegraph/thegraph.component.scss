@@ -1,0 +1,42 @@
+@import "../../../assets/scss/variables";
+
+.tab-container {
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  padding: 20px;
+  text-transform: uppercase;
+  // background-color: #f7f7f7;
+  .tabs {
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+    &.active {
+      border-left: 2px solid $baseColor;
+      border-right: 2px solid $baseColor;
+      border-bottom: 2px solid $baseColor;
+      box-shadow: 0 0 11px #6abaea;
+      transition: all 0.25s ease;
+      background-color: #edf7fd;
+    }
+  }
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.user-dashboard-container {
+  // height: 100vh;
+  min-height: 80vh;
+}

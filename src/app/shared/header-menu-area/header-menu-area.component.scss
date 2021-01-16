@@ -1,0 +1,56 @@
+ul.dropdown-menu {
+  position: absolute !important;
+  top: 75px !important;
+}
+
+::ng-deep .new_icon {
+  position: absolute;
+  top: -10%;
+
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+::ng-deep .menu-icon {
+  position: relative;
+  bottom: 2px;
+  svg {
+    height: 16px;
+    width: 16px;
+    fill: #fff;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .menu-icon {
+    position: relative;
+    bottom: 2px;
+    svg {
+      height: 16px;
+      width: 16px;
+      fill: #fff;
+    }
+  }
+
+  .button-link {
+    font: 500 12px/39px "Roboto", sans-serif !important;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0 10px !important;
+    border-radius: 10px;
+    margin-top: 31px;
+    background-color: #1b5a90;
+  }
+}
+
+@media (max-width: 991px) {
+  .header_area .navbar {
+    background: #000;
+  }
+
+  .header_area .navbar .nav .nav-item .nav-link {
+    font: 500 12px/50px "Roboto", sans-serif;
+  }
+}
