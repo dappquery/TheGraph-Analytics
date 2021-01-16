@@ -1,9 +1,9 @@
 import { iIntegrationDetails } from '../models/common';
 
 export class Constants {
-  public static IndexerDashboard = ` http://analytics.dappquery.com/public/dashboard/0f6f41d7-0a56-4b0a-ac1b-6112fc984f80`;
-  public static DelegratorDashboard = `http://analytics.dappquery.com/public/dashboard/b6562bf4-b3a1-4642-a364-7f2ab6d3d867`;
-  public static IndividualIndexerDashboard = `http://analytics.dappquery.com/public/dashboard/6940bd30-0cc7-40e7-ad20-c09e4664ddff`;
+  public static IndexerDashboard = ` https://analytics.dappquery.com/public/dashboard/0f6f41d7-0a56-4b0a-ac1b-6112fc984f80`;
+  public static DelegratorDashboard = `https://analytics.dappquery.com/public/dashboard/b6562bf4-b3a1-4642-a364-7f2ab6d3d867`;
+  public static IndividualIndexerDashboard = `https://analytics.dappquery.com/public/dashboard/6940bd30-0cc7-40e7-ad20-c09e4664ddff`;
 
   public static GENERAL = {
     GA_TRACKING_ID: 'UA-150439015-2',
