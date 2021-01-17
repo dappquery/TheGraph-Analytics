@@ -1,5 +1,7 @@
 <app-logout-header></app-logout-header>
 
+<hr>
+
 <div class="tab-container">
 
     <div class="tabs" [ngClass]="{
@@ -11,8 +13,5 @@
 </div>
 
 <div class="user-dashboard-container">
-
-    <!-- <div allowfullscreen="allowfullscreen" > -->
-    <!-- <div> -->
-    <iframe [src]="dashboardUrl | safe"></iframe>
+    <iframe frameBorder="0" [src]="dashboardUrl | safe"></iframe>
 </div>

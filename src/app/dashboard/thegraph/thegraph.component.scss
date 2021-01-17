@@ -2,12 +2,11 @@
 
 .tab-container {
   display: flex;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   color: #000;
-  padding: 20px;
   text-transform: uppercase;
-  // background-color: #f7f7f7;
+
   .tabs {
     width: 20%;
     text-align: center;
@@ -17,12 +16,15 @@
       cursor: pointer;
     }
     &.active {
-      border-left: 2px solid $baseColor;
-      border-right: 2px solid $baseColor;
-      border-bottom: 2px solid $baseColor;
-      box-shadow: 0 0 11px #6abaea;
+      border-radius: 6px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
       transition: all 0.25s ease;
-      background-color: #edf7fd;
+      background-color: #3bacf0;
+      color: #fff;
     }
   }
 }
@@ -39,4 +41,11 @@ iframe {
 .user-dashboard-container {
   // height: 100vh;
   min-height: 80vh;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 0 solid rgba(0, 0, 0, 0.1);
 }

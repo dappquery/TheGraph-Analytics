@@ -33,6 +33,8 @@ export class Constants {
     SCHEDULE_DEMO: 'https://calendly.com/dappquery',
     ONBOARDING_GOOGLE_FORM: 'https://forms.gle/7qe2fGvoXHhWc1Vx9',
     dappqueryDocs: 'https://docs.dappquery.com/',
+    EXPLORER: 'https://dappquery.com/explorer/',
+    DAPPQUERY_WEBSITE: 'https://dappquery.com/',
   };
 
   public static explorerList = [
