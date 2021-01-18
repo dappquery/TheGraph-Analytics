@@ -49,6 +49,8 @@ import {
   starIcon,
   dashboard,
   chart,
+  indexerIcon,
+  delegatorIcon,
 } from './utility/svg-icon/svg-icon';
 import { SlidingTabsModule } from 'angular-sliding-tabs';
 
@@ -107,6 +109,8 @@ export class AppModule {
       starIcon,
       dashboard,
       chart,
+      indexerIcon,
+      delegatorIcon,
     ]);
   }
 }

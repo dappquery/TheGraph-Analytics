@@ -5,9 +5,15 @@
 <div class="tab-container">
 
     <div class="tabs" [ngClass]="{
-        active: isTab1Active}" (click)="switchTab('tab1')">Indexer Dashboard</div>
+        active: isTab1Active}" (click)="switchTab('tab1')">
+        <app-svg-icon name="indexerIcon" class="filter-icon">
+        </app-svg-icon>Indexer Dashboard
+    </div>
     <div class="tabs" [ngClass]="{
-        active: isTab2Active}" (click)="switchTab('tab2')">Delegrator Dashboard</div>
+        active: isTab2Active}" (click)="switchTab('tab2')">
+        <app-svg-icon name="delegatorIcon" class="icons">
+        </app-svg-icon>Delegrator Dashboard
+    </div>
     <div class="tabs" [ngClass]="{
         active: isTab3Active}" (click)="switchTab('tab3')">Individual Indexer Dashboard</div>
 </div>

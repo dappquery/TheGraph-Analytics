@@ -29,6 +29,13 @@
   }
 }
 
+::ng-deep .icons {
+  #delegator {
+    height: 40px;
+    width: 40px;
+  }
+}
+
 iframe {
   display: block;
   width: 100%;
