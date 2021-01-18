@@ -15,7 +15,10 @@
         </app-svg-icon>Delegrator Dashboard
     </div>
     <div class="tabs" [ngClass]="{
-        active: isTab3Active}" (click)="switchTab('tab3')">Individual Indexer Dashboard</div>
+        active: isTab3Active}" (click)="switchTab('tab3')">
+        <app-svg-icon name="indexerIcon" class="filter-icon">
+        </app-svg-icon>Individual Indexer Dashboard
+    </div>
 </div>
 
 <div class="user-dashboard-container">
