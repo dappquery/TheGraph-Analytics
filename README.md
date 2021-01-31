@@ -5,3 +5,10 @@
 * Chart Collection: https://docs.dappquery.com/projects-and-dapps/the-graph-network
 
 
+![Screenshot](dashboard/pic1.png)
+
+![Screenshot](dashboard/pic2.png)
+
+![Screenshot](dashboard/pic3.png)
+
+![Screenshot](dashboard/pic4.png)
