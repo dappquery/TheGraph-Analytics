@@ -10,15 +10,23 @@
         </app-svg-icon>Indexer Dashboard
     </div>
     <div class="tabs" [ngClass]="{
+            active: isTab3Active}" (click)="switchTab('tab3')">
+        <app-svg-icon name="indexerIcon" class="filter-icon">
+        </app-svg-icon>Individual Indexer Dashboard
+    </div>
+    <div class="tabs" [ngClass]="{
         active: isTab2Active}" (click)="switchTab('tab2')">
         <app-svg-icon name="delegatorIcon" class="icons">
         </app-svg-icon>Delegator Dashboard
     </div>
+
+
     <div class="tabs" [ngClass]="{
-        active: isTab3Active}" (click)="switchTab('tab3')">
+        active: isTab4Active}" (click)="switchTab('tab4')">
         <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>Individual Indexer Dashboard
+        </app-svg-icon>Individual Delegator Dashboard
     </div>
+
 </div>
 
 <div class="user-dashboard-container">
