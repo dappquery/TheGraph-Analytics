@@ -4,6 +4,7 @@ export class Constants {
   public static IndexerDashboard = `https://analytics.dappquery.com/public/dashboard/0f6f41d7-0a56-4b0a-ac1b-6112fc984f80`;
   public static DelegratorDashboard = `https://analytics.dappquery.com/public/dashboard/b6562bf4-b3a1-4642-a364-7f2ab6d3d867`;
   public static IndividualIndexerDashboard = `https://analytics.dappquery.com/public/dashboard/6940bd30-0cc7-40e7-ad20-c09e4664ddff`;
+  public static IndividualDelegatorDashboard = `http://analytics.dappquery.com/public/dashboard/f0323b61-7f96-4591-bde2-69c52676bd40`;
 
   public static GENERAL = {
     GA_TRACKING_ID: 'UA-150439015-2',
@@ -674,8 +675,8 @@ export class Constants {
   public static pageRedirectTo = {
     registerDapp: '/connect-smart-contract/',
     home: '/',
-    login: '/login/',
-    dashboard: '/dashboard/',
+    indexer: '/indexer/',
+    delegator: '/delegator/',
     integration: '/integration/',
     signup: '/signup',
     explorer: '/explorer/',
