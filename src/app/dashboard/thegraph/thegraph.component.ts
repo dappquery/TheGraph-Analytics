@@ -30,7 +30,7 @@ export class ThegraphComponent implements OnInit {
   }
 
   routeTodashboard() {
-    let route = this.router.url.includes('indexer') ? 'indexer' : 'delegator';
+    let route = this.router.url.includes('delegator') ? 'delegator' : 'indexer';
     switch (route) {
       case 'indexer':
         {
