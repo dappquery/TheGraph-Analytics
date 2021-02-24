@@ -24,27 +24,38 @@ export class ThegraphComponent implements OnInit {
 
   ngOnInit(): void {
     //localhost:4200/indexer?indexer_address=0x7697a886fc3b71a8a88487019337a6bbe5838f1a
-
     // http: //localhost:4200/delegator?id=0xebc391ba182f6d8654a516a44e382cf9c9196831
-    if (
-      this.router.url.includes('indexer') &&
-      this.activatedRoute.snapshot.queryParams['indexer_address']
-    ) {
-      this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
-        'indexer_address'
-      ];
-      this.switchTab('tab3');
-    } else if (
-      this.router.url.includes('delegator') &&
-      this.activatedRoute.snapshot.queryParams['id']
-    ) {
-      this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams['id'];
-      this.switchTab('tab4');
-    } else {
-      this.isTab1Active = true;
-      this.isTab2Active = false;
-      this.isTab3Active = false;
-      this.dashboardUrl = this.constants.IndexerDashboard;
+
+    this.routeTodashboard();
+  }
+
+  routeTodashboard() {
+    let route = this.router.url.includes('indexer') ? 'indexer' : 'delegator';
+    switch (route) {
+      case 'indexer':
+        {
+          this.switchTab('tab1');
+          this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
+            'indexer_address'
+          ];
+          if (this.activatedRoute.snapshot.queryParams['indexer_address']) {
+            this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
+              'indexer_address'
+            ];
+            this.switchTab('tab3');
+          }
+        }
+        break;
+      case 'delegator': {
+        this.switchTab('tab2');
+        if (this.activatedRoute.snapshot.queryParams['id']) {
+          this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
+            'id'
+          ];
+          this.switchTab('tab4');
+        }
+        break;
+      }
     }
   }
   switchTab(tab: string) {
@@ -65,7 +76,9 @@ export class ThegraphComponent implements OnInit {
       }
       case 'tab3': {
         // this.createUrlWithAddress('indexer');
-        this.dashboardUrl = this.arrayOfAaddresses.length
+        this.dashboardUrl = this.activatedRoute.snapshot.queryParams[
+          'indexer_address'
+        ]
           ? `${
               this.constants.IndividualIndexerDashboard
             }?${this.createUrlWithAddress('indexer')}`
@@ -77,8 +90,8 @@ export class ThegraphComponent implements OnInit {
         break;
       }
       case 'tab4': {
-        this.createUrlWithAddress('delegator');
-        this.dashboardUrl = this.arrayOfAaddresses.length
+        // this.createUrlWithAddress('delegator');
+        this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
           ? `${
               this.constants.IndividualDelegatorDashboard
             }?${this.createUrlWithAddress('delegator')}`
@@ -97,15 +110,17 @@ export class ThegraphComponent implements OnInit {
     if (Array.isArray(this.arrayOfAaddresses)) {
       if (this.arrayOfAaddresses.length) {
         this.arrayOfAaddresses.forEach((address) => {
-          url = (typeOfAddress = 'indexer')
-            ? url + `indexer_address=${address}&`
-            : url + `delegator_address=${address}&`;
+          url =
+            typeOfAddress === 'indexer'
+              ? url + `indexer_address=${address}&`
+              : url + `id=${address}&`;
         });
       }
     } else {
-      url = (typeOfAddress = 'indexer')
-        ? url + `indexer_address=${this.arrayOfAaddresses}`
-        : url + `delegator_address=${this.arrayOfAaddresses}`;
+      url =
+        typeOfAddress === 'indexer'
+          ? url + `indexer_address=${this.arrayOfAaddresses}`
+          : url + `id=${this.arrayOfAaddresses}`;
     }
     return url;
   }
