@@ -36,6 +36,8 @@ export class Constants {
     dappqueryDocs: 'https://docs.dappquery.com/',
     EXPLORER: 'https://dappquery.com/explorer/',
     DAPPQUERY_WEBSITE: 'https://dappquery.com/',
+    DAPPQUERY_DELEGATION_LINK: 'https://network.thegraph.com/profile?id=0x4bc2e066fb0857493a1fbe48462bb34ff6ea731f&view=Indexing',
+    DAPPQUERY_INDEXER: 'https://thegraph.dappquery.com/indexer?indexer_address=0x4bc2e066fb0857493a1fbe48462bb34ff6ea731f'
   };
 
   public static explorerList = [
@@ -145,6 +147,8 @@ export class Constants {
 
   public static LABELS = {
     commonLables: {
+      indexerStats: 'Our Indexer Status',
+      delegateToUs: 'Delegate To Us',
       features: 'FEATURES',
       demo: 'DEMO',
       explorer: 'EXPLORER',
