@@ -58,3 +58,14 @@ ul.dropdown-menu {
     font: 500 12px/50px "Roboto", sans-serif;
   }
 }
+@media (min-width: 1200px) {
+  .box_1620 {
+    max-width: 1650px;
+    margin: auto;
+  }
+}
+@media (max-width: 1200px) and (min-width: 991px) {
+  .button-link {
+    margin-top: 0;
+  }
+}

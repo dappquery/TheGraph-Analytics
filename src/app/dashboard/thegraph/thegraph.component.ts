@@ -15,43 +15,38 @@ export class ThegraphComponent implements OnInit {
   dashboardUrl: string;
   constants = Constants;
   isTab4Active: boolean;
+  isMoreTabOpen = false;
   arrayOfAaddresses = [];
-
+  labels = this.constants.LABELS.theGraphDashboard;
   constructor(
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    //localhost:4200/indexer?indexer_address=0x7697a886fc3b71a8a88487019337a6bbe5838f1a
-    // http: //localhost:4200/delegator?id=0xebc391ba182f6d8654a516a44e382cf9c9196831
-
     this.routeTodashboard();
   }
 
   routeTodashboard() {
-    let route = this.router.url.includes('delegator') ? 'delegator' : 'indexer';
+    let route = this.router.url.includes(this.labels.delegator) ? this.labels.delegator : this.labels.indexer;
     switch (route) {
-      case 'indexer':
+      case this.labels.indexer:
         {
           this.switchTab('tab1');
-          this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
-            'indexer_address'
-          ];
-          if (this.activatedRoute.snapshot.queryParams['indexer_address']) {
-            this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
-              'indexer_address'
-            ];
+          this.arrayOfAaddresses =
+            this.activatedRoute.snapshot.queryParams[this.labels.indexer_address];
+          if (this.activatedRoute.snapshot.queryParams[this.labels.indexer_address]) {
+            this.arrayOfAaddresses =
+              this.activatedRoute.snapshot.queryParams[this.labels.indexer_address];
             this.switchTab('tab3');
           }
         }
         break;
-      case 'delegator': {
+      case this.labels.delegator: {
         this.switchTab('tab2');
         if (this.activatedRoute.snapshot.queryParams['id']) {
-          this.arrayOfAaddresses = this.activatedRoute.snapshot.queryParams[
-            'id'
-          ];
+          this.arrayOfAaddresses =
+            this.activatedRoute.snapshot.queryParams['id'];
           this.switchTab('tab4');
         }
         break;
@@ -75,13 +70,12 @@ export class ThegraphComponent implements OnInit {
         break;
       }
       case 'tab3': {
-        // this.createUrlWithAddress('indexer');
         this.dashboardUrl = this.activatedRoute.snapshot.queryParams[
-          'indexer_address'
+          this.labels.indexer_address
         ]
           ? `${
               this.constants.IndividualIndexerDashboard
-            }?${this.createUrlWithAddress('indexer')}`
+            }?${this.createUrlWithAddress(this.labels.indexer)}`
           : `${this.constants.IndividualIndexerDashboard}`;
         console.log('indexer url::', this.dashboardUrl);
         this.disableAllTabs();
@@ -90,11 +84,10 @@ export class ThegraphComponent implements OnInit {
         break;
       }
       case 'tab4': {
-        // this.createUrlWithAddress('delegator');
         this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
           ? `${
               this.constants.IndividualDelegatorDashboard
-            }?${this.createUrlWithAddress('delegator')}`
+            }?${this.createUrlWithAddress(this.labels.delegator)}`
           : this.constants.IndividualDelegatorDashboard;
         console.log('Delegator url::', this.dashboardUrl);
         this.disableAllTabs();
@@ -111,14 +104,14 @@ export class ThegraphComponent implements OnInit {
       if (this.arrayOfAaddresses.length) {
         this.arrayOfAaddresses.forEach((address) => {
           url =
-            typeOfAddress === 'indexer'
+            typeOfAddress === this.labels.indexer
               ? url + `indexer_address=${address}&`
               : url + `id=${address}&`;
         });
       }
     } else {
       url =
-        typeOfAddress === 'indexer'
+        typeOfAddress === this.labels.indexer
           ? url + `indexer_address=${this.arrayOfAaddresses}`
           : url + `id=${this.arrayOfAaddresses}`;
     }
@@ -130,5 +123,11 @@ export class ThegraphComponent implements OnInit {
     this.isTab2Active = false;
     this.isTab3Active = false;
     this.isTab4Active = false;
+    this.isMoreTabOpen = false;
+  }
+
+  toggleMoreTab() {
+    this.disableAllTabs();
+    this.isMoreTabOpen = !this.isMoreTabOpen;
   }
 }
