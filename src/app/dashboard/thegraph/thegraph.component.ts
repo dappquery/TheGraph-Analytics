@@ -123,7 +123,6 @@ export class ThegraphComponent implements OnInit {
     this.isTab2Active = false;
     this.isTab3Active = false;
     this.isTab4Active = false;
-    this.isMoreTabOpen = false;
   }
 
   toggleMoreTab() {
