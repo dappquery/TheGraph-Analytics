@@ -2,21 +2,22 @@
 
 .tab-container {
   display: flex;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: #fff;
-  margin-top:1px;
+  margin-top: 1px;
   text-transform: uppercase;
   background: #3bacf0;
+  position: relative;
   .tabs {
-    width: 33.33%;
+    width: 17%;
     text-align: center;
-    padding: 10px;
-    border-right: 1px solid #fff;
+    //padding: 6px;
+    //border-right: 1px solid #fff;
 
     &:hover {
       cursor: pointer;
-      background:  #199df0;
+      background: #199df0;
     }
     &.active {
       border-radius: 6px;
@@ -58,4 +59,81 @@ hr {
   margin-bottom: 1rem;
   border: 0;
   border-top: 0 solid rgba(0, 0, 0, 0.1);
+}
+
+::ng-deep .arrowIcon {
+  #arrow {
+    height: 20px;
+    width: 20px;
+    fill: white;
+  }
+  #arrowUp {
+    height: 20px;
+    width: 12px;
+    fill: white;
+  }
+}
+@media (min-width: 450px) and (max-width: 491px) {
+  .tab-container {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 382px) {
+  .tab-container {
+    margin-top: 60px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1200px) {
+  .tab-container {
+    margin-top: 19px;
+  }
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 2px solid #daf1f2;
+  border-radius: 4px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.175);
+  right: 2%;
+  width: 90%;
+  z-index: 1;
+  top: 100%;
+  margin-top: 2%;
+  min-width: 200px;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: 400;
+}
+
+.dropdown-content a:hover {
+  background-color: #199df0;
+  color: white;
+}
+@media (max-width: 500px) {
+  .tab-container {
+    flex-flow: column;
+    .tabs {
+      width: 100%;
+      border-bottom: 1px solid white;
+    }
+  }
+  .dropdown-content {
+    right: 25%;
+    width: 50%;
+  }
+}
+.dropdowm-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-flow: row;
+  align-items: center;
+  position: relative;
 }

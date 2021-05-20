@@ -20,7 +20,7 @@ const routes: Routes = [
     // canActivate: [IntegrationDetailsGuard]
   },
   {
-    path: 'delegator/:delegator_address',
+    path: 'delegator/:id',
     component: ThegraphComponent,
     // canActivate: [IntegrationDetailsGuard]
   },
