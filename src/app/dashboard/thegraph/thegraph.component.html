@@ -10,26 +10,19 @@
         </app-svg-icon>{{labels.Indexer_Dashboard}}
     </div>
     <div class="tabs" [ngClass]="{
-            active: isTab3Active}" (click)="switchTab('tab3')">
-        <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>{{labels.Individual_Indexer_Dashboard}}
-    </div>
-    <div class="tabs" [ngClass]="{
         active: isTab2Active}" (click)="switchTab('tab2')">
         <app-svg-icon name="delegatorIcon" class="icons">
         </app-svg-icon>{{labels.Delegator_Dashboard}}
     </div>
-
-
+   
     <div class="tabs" [ngClass]="{
-        active: isTab4Active}" (click)="switchTab('tab4')">
-        <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>{{labels.Individual_Delegator_Dashboard}}
+        active: isTab3Active}" (click)="switchTab('tab3')">
+        {{labels.Curator_Dashboard}}
     </div>
 
     
-   
-    <div class="dropdowm-container tabs " [ngClass]="{
+   <!-- For to Add more dashboard Under more option -->
+    <!-- <div class="dropdowm-container tabs " [ngClass]="{
         active: isMoreTabOpen}" (click)="toggleMoreTab()">
        <div >
         {{labels.more}}
@@ -40,7 +33,7 @@
         <a >New Tab 1</a>
         <a >New Tab 2</a>
        </div>
-      </div>
+      </div> -->
 
     
 

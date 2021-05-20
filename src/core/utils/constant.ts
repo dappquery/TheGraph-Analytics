@@ -73,10 +73,11 @@ export class Constants {
       delegator:'delegator',
       indexer: 'indexer',
       indexer_address: 'indexer_address',
-      Indexer_Dashboard: 'Indexer Dashboard',
-      Individual_Indexer_Dashboard: 'Individual Indexer Dashboard',
-      Delegator_Dashboard: 'Delegator Dashboard',
-      Individual_Delegator_Dashboard: 'Individual Delegator Dashboard',
+      Indexer_Dashboard: 'Indexer ',
+      //Individual_Indexer_Dashboard: 'Individual Indexer ',
+      Delegator_Dashboard: 'Delegator',
+      //Individual_Delegator_Dashboard: 'Individual Delegator',
+      Curator_Dashboard: 'Curator',
       more : 'More'
     }
 

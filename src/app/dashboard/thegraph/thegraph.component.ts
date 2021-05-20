@@ -38,7 +38,7 @@ export class ThegraphComponent implements OnInit {
           if (this.activatedRoute.snapshot.queryParams[this.labels.indexer_address]) {
             this.arrayOfAaddresses =
               this.activatedRoute.snapshot.queryParams[this.labels.indexer_address];
-            this.switchTab('tab3');
+           // this.switchTab('tab3');
           }
         }
         break;
@@ -47,7 +47,7 @@ export class ThegraphComponent implements OnInit {
         if (this.activatedRoute.snapshot.queryParams['id']) {
           this.arrayOfAaddresses =
             this.activatedRoute.snapshot.queryParams['id'];
-          this.switchTab('tab4');
+         // this.switchTab('tab4');
         }
         break;
       }
@@ -69,32 +69,26 @@ export class ThegraphComponent implements OnInit {
 
         break;
       }
+      
       case 'tab3': {
-        this.dashboardUrl = this.activatedRoute.snapshot.queryParams[
-          this.labels.indexer_address
-        ]
-          ? `${
-              this.constants.IndividualIndexerDashboard
-            }?${this.createUrlWithAddress(this.labels.indexer)}`
-          : `${this.constants.IndividualIndexerDashboard}`;
-        console.log('indexer url::', this.dashboardUrl);
+        
         this.disableAllTabs();
         this.isTab3Active = true;
 
         break;
       }
-      case 'tab4': {
-        this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
-          ? `${
-              this.constants.IndividualDelegatorDashboard
-            }?${this.createUrlWithAddress(this.labels.delegator)}`
-          : this.constants.IndividualDelegatorDashboard;
-        console.log('Delegator url::', this.dashboardUrl);
-        this.disableAllTabs();
-        this.isTab4Active = true;
+      // case 'tab4': {
+      //   this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
+      //     ? `${
+      //         this.constants.IndividualDelegatorDashboard
+      //       }?${this.createUrlWithAddress(this.labels.delegator)}`
+      //     : this.constants.IndividualDelegatorDashboard;
+      //   console.log('Delegator url::', this.dashboardUrl);
+      //   this.disableAllTabs();
+      //   this.isTab4Active = true;
 
-        break;
-      }
+      //   break;
+      // }
     }
   }
 
@@ -125,8 +119,8 @@ export class ThegraphComponent implements OnInit {
     this.isTab4Active = false;
   }
 
-  toggleMoreTab() {
-    this.disableAllTabs();
-    this.isMoreTabOpen = !this.isMoreTabOpen;
-  }
+  // toggleMoreTab() {
+  //   this.disableAllTabs();
+  //   this.isMoreTabOpen = !this.isMoreTabOpen;
+  // }
 }
