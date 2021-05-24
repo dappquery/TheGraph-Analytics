@@ -7,25 +7,37 @@
     <div class="tabs" [ngClass]="{
         active: isTab1Active}" (click)="switchTab('tab1')">
         <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>Indexer Dashboard
-    </div>
-    <div class="tabs" [ngClass]="{
-            active: isTab3Active}" (click)="switchTab('tab3')">
-        <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>Individual Indexer Dashboard
+        </app-svg-icon>{{labels.indexerLabel}}
     </div>
     <div class="tabs" [ngClass]="{
         active: isTab2Active}" (click)="switchTab('tab2')">
         <app-svg-icon name="delegatorIcon" class="icons">
-        </app-svg-icon>Delegator Dashboard
+        </app-svg-icon>{{labels.delegatorLabel}}
     </div>
-
 
     <div class="tabs" [ngClass]="{
-        active: isTab4Active}" (click)="switchTab('tab4')">
-        <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>Individual Delegator Dashboard
+        active: isTab3Active}" (click)="switchTab('tab3')">
+        <app-svg-icon name="curatorIcon" class="icons">
+        </app-svg-icon>
+        {{labels.curatorLabel}}
     </div>
+
+
+    <!-- For to Add more dashboard Under more option -->
+    <!-- <div class="dropdowm-container tabs " [ngClass]="{
+        active: isMoreTabOpen}" (click)="toggleMoreTab()">
+       <div >
+        {{labels.more}}
+        <app-svg-icon *ngIf="isMoreTabOpen"   name="arrowUp" class="arrowIcon"></app-svg-icon>
+         <app-svg-icon *ngIf="!isMoreTabOpen"   name="arrowIcon" class="arrowIcon"></app-svg-icon>
+       </div>
+       <div *ngIf="isMoreTabOpen" class="dropdown-content">
+        <a >New Tab 1</a>
+        <a >New Tab 2</a>
+       </div>
+      </div> -->
+
+
 
 </div>
 
