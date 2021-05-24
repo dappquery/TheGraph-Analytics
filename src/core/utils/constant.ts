@@ -5,6 +5,7 @@ export class Constants {
   public static DelegratorDashboard = `https://analytics.dappquery.com/public/dashboard/b6562bf4-b3a1-4642-a364-7f2ab6d3d867`;
   public static IndividualIndexerDashboard = `https://analytics.dappquery.com/public/dashboard/6940bd30-0cc7-40e7-ad20-c09e4664ddff`;
   public static IndividualDelegatorDashboard = `https://analytics.dappquery.com/public/dashboard/f0323b61-7f96-4591-bde2-69c52676bd40`;
+  public static curatorDashboard = `http://analytics.dappquery.com/public/dashboard/aed96cfe-5de5-4b46-85bb-5324f3bc785d`;
 
   public static GENERAL = {
     GA_TRACKING_ID: 'UA-150439015-2',
@@ -36,10 +37,11 @@ export class Constants {
     dappqueryDocs: 'https://docs.dappquery.com/',
     EXPLORER: 'https://dappquery.com/explorer/',
     DAPPQUERY_WEBSITE: 'https://dappquery.com/',
-    DAPPQUERY_DELEGATION_LINK: 'https://network.thegraph.com/profile?id=0x4bc2e066fb0857493a1fbe48462bb34ff6ea731f&view=Indexing',
-    DAPPQUERY_INDEXER: 'https://thegraph.dappquery.com/indexer?indexer_address=0x4bc2e066fb0857493a1fbe48462bb34ff6ea731f'
+    DAPPQUERY_DELEGATION_LINK:
+      'https://network.thegraph.com/profile?id=0x4bc2e066fb0857493a1fbe48462bb34ff6ea731f&view=Indexing',
+    DAPPQUERY_INDEXER:
+      'https://thegraph.dappquery.com/indexer?indexer_address=0x4bc2e066fb0857493a1fbe48462bb34ff6ea731f',
   };
-
 
   public static LABELS = {
     commonLables: {
@@ -69,17 +71,15 @@ export class Constants {
         'Your account is not verified yet. Please check your inbox and verify your email.',
     },
     headerArea: {},
-    theGraphDashboard :{
-      delegator:'delegator',
-      indexer: 'indexer',
+    theGraphDashboard: {
+      delegator: '/delegator',
+      indexer: '/indexer',
       indexer_address: 'indexer_address',
-      Indexer_Dashboard: 'Indexer ',
-      //Individual_Indexer_Dashboard: 'Individual Indexer ',
-      Delegator_Dashboard: 'Delegator',
-      //Individual_Delegator_Dashboard: 'Individual Delegator',
-      Curator_Dashboard: 'Curator',
-      more : 'More'
-    }
-
+      indexerLabel: 'Indexer ',
+      curatorLabel: 'Curator ',
+      delegatorLabel: 'Delegator',
+      curator: '/curator',
+      more: 'More',
+    },
   };
 }

@@ -18,6 +18,7 @@ import {
   indexerIcon,
   delegatorIcon,
   arrowUp,
+  curatorIcon,
 } from './utility/svg-icon/svg-icon';
 import { SlidingTabsModule } from 'angular-sliding-tabs';
 
@@ -44,7 +45,8 @@ export class AppModule {
       arrowIcon,
       indexerIcon,
       delegatorIcon,
-      arrowUp
+      arrowUp,
+      curatorIcon,
     ]);
   }
 }

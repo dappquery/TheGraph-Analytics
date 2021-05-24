@@ -7,23 +7,24 @@ const routes: Routes = [
   {
     path: 'indexer',
     component: ThegraphComponent,
-    // canActivate: [IntegrationDetailsGuard]
   },
   {
     path: 'indexer/:indexer_address',
     component: ThegraphComponent,
-    // canActivate: [IntegrationDetailsGuard]
   },
   {
     path: 'delegator',
     component: ThegraphComponent,
-    // canActivate: [IntegrationDetailsGuard]
   },
   {
     path: 'delegator/:id',
     component: ThegraphComponent,
-    // canActivate: [IntegrationDetailsGuard]
   },
+  {
+    path: 'curator',
+    component: ThegraphComponent,
+  },
+  { path: '**', redirectTo: '/indexer' },
 ];
 
 @NgModule({

@@ -28,37 +28,24 @@ export class ThegraphComponent implements OnInit {
   }
 
   routeTodashboard() {
-    let route = this.router.url.includes(this.labels.delegator)
-      ? this.labels.delegator
-      : this.labels.indexer;
+    let route = this.router.url.replace(/\\/g, '');
     switch (route) {
       case this.labels.indexer:
         {
           this.switchTab('tab1');
-          this.arrayOfAaddresses =
-            this.activatedRoute.snapshot.queryParams[
-              this.labels.indexer_address
-            ];
-          if (
-            this.activatedRoute.snapshot.queryParams[
-              this.labels.indexer_address
-            ]
-          ) {
-            this.arrayOfAaddresses =
-              this.activatedRoute.snapshot.queryParams[
-                this.labels.indexer_address
-              ];
-            // this.switchTab('tab3');
-          }
         }
         break;
       case this.labels.delegator: {
         this.switchTab('tab2');
-        if (this.activatedRoute.snapshot.queryParams['id']) {
-          this.arrayOfAaddresses =
-            this.activatedRoute.snapshot.queryParams['id'];
-          // this.switchTab('tab4');
-        }
+        break;
+      }
+
+      case this.labels.curator: {
+        this.switchTab('tab3');
+        break;
+      }
+      default: {
+        this.switchTab('tab1');
         break;
       }
     }
@@ -81,23 +68,16 @@ export class ThegraphComponent implements OnInit {
       }
 
       case 'tab3': {
+        this.dashboardUrl = this.constants.curatorDashboard;
         this.disableAllTabs();
         this.isTab3Active = true;
-
+        this.router.navigate([this.labels.curator]);
         break;
       }
-      // case 'tab4': {
-      //   this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
-      //     ? `${
-      //         this.constants.IndividualDelegatorDashboard
-      //       }?${this.createUrlWithAddress(this.labels.delegator)}`
-      //     : this.constants.IndividualDelegatorDashboard;
-      //   console.log('Delegator url::', this.dashboardUrl);
-      //   this.disableAllTabs();
-      //   this.isTab4Active = true;
-
-      //   break;
-      // }
+      default: {
+        this.switchTab('tab1');
+        break;
+      }
     }
   }
 
@@ -127,9 +107,4 @@ export class ThegraphComponent implements OnInit {
     this.isTab3Active = false;
     this.isTab4Active = false;
   }
-
-  // toggleMoreTab() {
-  //   this.disableAllTabs();
-  //   this.isMoreTabOpen = !this.isMoreTabOpen;
-  // }
 }

@@ -7,17 +7,19 @@
     <div class="tabs" [ngClass]="{
         active: isTab1Active}" (click)="switchTab('tab1')">
         <app-svg-icon name="indexerIcon" class="filter-icon">
-        </app-svg-icon>{{labels.Indexer_Dashboard}}
+        </app-svg-icon>{{labels.indexerLabel}}
     </div>
     <div class="tabs" [ngClass]="{
         active: isTab2Active}" (click)="switchTab('tab2')">
         <app-svg-icon name="delegatorIcon" class="icons">
-        </app-svg-icon>{{labels.Delegator_Dashboard}}
+        </app-svg-icon>{{labels.delegatorLabel}}
     </div>
 
     <div class="tabs" [ngClass]="{
         active: isTab3Active}" (click)="switchTab('tab3')">
-        {{labels.Curator_Dashboard}}
+        <app-svg-icon name="curatorIcon" class="icons">
+        </app-svg-icon>
+        {{labels.curatorLabel}}
     </div>
 
 
