@@ -5,7 +5,7 @@ export class Constants {
   public static DelegratorDashboard = `https://analytics.dappquery.com/public/dashboard/b6562bf4-b3a1-4642-a364-7f2ab6d3d867`;
   public static IndividualIndexerDashboard = `https://analytics.dappquery.com/public/dashboard/6940bd30-0cc7-40e7-ad20-c09e4664ddff`;
   public static IndividualDelegatorDashboard = `https://analytics.dappquery.com/public/dashboard/f0323b61-7f96-4591-bde2-69c52676bd40`;
-  public static curatorDashboard = `http://analytics.dappquery.com/public/dashboard/aed96cfe-5de5-4b46-85bb-5324f3bc785d`;
+  public static curatorDashboard = `https://analytics.dappquery.com/public/dashboard/aed96cfe-5de5-4b46-85bb-5324f3bc785d`;
 
   public static GENERAL = {
     GA_TRACKING_ID: 'UA-150439015-2',
