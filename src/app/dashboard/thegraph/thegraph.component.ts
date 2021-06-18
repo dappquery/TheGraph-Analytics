@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Constants } from 'src/core/utils/constant';
@@ -71,38 +70,46 @@ export class ThegraphComponent implements OnInit {
   switchTab(tab: string) {
     switch (tab) {
       case 'tab1': {
-        if (this.activatedRoute.snapshot.queryParams['indexer_address']) {
-          this.dashboardUrl = this.activatedRoute.snapshot.queryParams[
-            'indexer_address'
-          ]
-            ? `${
-                this.constants.IndividualIndexerDashboard
-              }?${this.createUrlWithAddress('indexer')}`
-            : `${this.constants.IndividualIndexerDashboard}`;
-          console.log('indexer url::', this.dashboardUrl);
-          this.disableAllTabs();
-          this.isTab1Active = true;
+        if (this.router.url.includes('indexer')) {
+          if (this.activatedRoute.snapshot.queryParams['indexer_address']) {
+            this.dashboardUrl = this.activatedRoute.snapshot.queryParams[
+              'indexer_address'
+            ]
+              ? `${
+                  this.constants.IndividualIndexerDashboard
+                }?${this.createUrlWithAddress('indexer')}`
+              : `${this.constants.IndividualIndexerDashboard}`;
+            console.log('indexer url::', this.dashboardUrl);
+            this.disableAllTabs();
+            this.isTab1Active = true;
+          } else {
+            this.dashboardUrl = this.constants.IndexerDashboard;
+            this.disableAllTabs();
+            this.isTab1Active = true;
+          }
         } else {
-          this.dashboardUrl = this.constants.IndexerDashboard;
-          this.disableAllTabs();
-          this.isTab1Active = true;
+          this.router.navigate(['/indexer']);
         }
         break;
       }
       case 'tab2': {
-        if (this.activatedRoute.snapshot.queryParams['id']) {
-          this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
-            ? `${
-                this.constants.IndividualDelegatorDashboard
-              }?${this.createUrlWithAddress('delegator')}`
-            : this.constants.IndividualDelegatorDashboard;
-          console.log('Delegator url::', this.dashboardUrl);
-          this.disableAllTabs();
-          this.isTab4Active = true;
+        if (this.router.url.includes('delegator')) {
+          if (this.activatedRoute.snapshot.queryParams['id']) {
+            this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
+              ? `${
+                  this.constants.IndividualDelegatorDashboard
+                }?${this.createUrlWithAddress('delegator')}`
+              : this.constants.IndividualDelegatorDashboard;
+            console.log('Delegator url::', this.dashboardUrl);
+            this.disableAllTabs();
+            this.isTab4Active = true;
+          } else {
+            this.dashboardUrl = this.constants.DelegratorDashboard;
+            this.disableAllTabs();
+            this.isTab2Active = true;
+          }
         } else {
-          this.dashboardUrl = this.constants.DelegratorDashboard;
-          this.disableAllTabs();
-          this.isTab2Active = true;
+          this.router.navigate(['/delegator']);
         }
         break;
       }

@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ThegraphComponent } from './dashboard/thegraph/thegraph.component';
 
 const routes: Routes = [
-  { path: '', component: ThegraphComponent },
+  // { path: '', component: ThegraphComponent },
   {
     path: 'indexer',
     component: ThegraphComponent,
