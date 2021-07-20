@@ -7,8 +7,8 @@ export class Constants {
   public static IndividualDelegatorDashboard = `https://analytics.dappquery.com/public/dashboard/f0323b61-7f96-4591-bde2-69c52676bd40`;
   public static curatorDashboard = `https://analytics.dappquery.com/public/dashboard/aed96cfe-5de5-4b46-85bb-5324f3bc785d`;
   public static individualcuratorDashboard = `https://analytics.dappquery.com/public/dashboard/a16e7dd8-c0c0-4f57-9c0d-dec5419d8f6a`;
-  public static subgraphDashboard = `http://analytics.dappquery.com/public/dashboard/ecee9e7c-8f90-4932-9a61-7aa6c22bcc1b`;
-  public static individualSubgraphDashboard = `http://analytics.dappquery.com/public/dashboard/5bf2f8f3-e8e9-4b12-8098-f6092374077c`;
+  public static subgraphDashboard = `https://analytics.dappquery.com/public/dashboard/ecee9e7c-8f90-4932-9a61-7aa6c22bcc1b`;
+  public static individualSubgraphDashboard = `https://analytics.dappquery.com/public/dashboard/5bf2f8f3-e8e9-4b12-8098-f6092374077c`;
 
 
   public static GENERAL = {
