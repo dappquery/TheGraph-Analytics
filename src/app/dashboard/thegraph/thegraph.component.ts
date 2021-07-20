@@ -38,6 +38,9 @@ export class ThegraphComponent implements OnInit {
     } else if (this.router.url.includes('curator')) {
       route = 'curator';
     }
+    else if (this.router.url.includes('subgraph')) {
+      route = 'subgraph';
+    }
     // route = this.router.url.includes('delegator') ? 'delegator' : 'indexer';
     switch (route) {
       case 'indexer':
@@ -63,6 +66,20 @@ export class ThegraphComponent implements OnInit {
       }
       case 'curator': {
         this.switchTab('tab3');
+        if (this.activatedRoute.snapshot.queryParams['id']) {
+          this.arrayOfAaddresses =
+            this.activatedRoute.snapshot.queryParams['id'];
+          this.switchTab('tab3');
+        }
+        break;
+      }
+      case 'subgraph': {
+        this.switchTab('tab4');
+        if (this.activatedRoute.snapshot.queryParams['id']) {
+          this.arrayOfAaddresses =
+            this.activatedRoute.snapshot.queryParams['id'];
+          this.switchTab('tab4');
+        }
         break;
       }
     }
@@ -114,10 +131,46 @@ export class ThegraphComponent implements OnInit {
         break;
       }
       case 'tab3': {
-        this.dashboardUrl = this.constants.curatorDashboard;
-        this.disableAllTabs();
-        this.isTab3Active = true;
+        if (this.router.url.includes('curator')) {
+          if (this.activatedRoute.snapshot.queryParams['id']) {
+            this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
+              ? `${
+                  this.constants.individualcuratorDashboard
+                }?${this.createUrlWithAddress('curator')}`
+              : this.constants.individualcuratorDashboard;
+            console.log('curator url::', this.dashboardUrl);
+            this.disableAllTabs();
+            this.isTab3Active = true;
+          } else {
+            this.dashboardUrl = this.constants.curatorDashboard;
+            this.disableAllTabs();
+            this.isTab3Active = true;
+          }
+        }
+
         this.router.navigate([this.labels.curator]);
+        break;
+      }
+      case 'tab4': {
+        if (this.router.url.includes('subgraph')) {
+          if (this.activatedRoute.snapshot.queryParams['id']) {
+            this.dashboardUrl = this.activatedRoute.snapshot.queryParams['id']
+              ? `${
+                  this.constants.individualSubgraphDashboard
+                }?${this.createUrlWithAddress('subgraph')}`
+              : this.constants.individualSubgraphDashboard;
+            console.log('subgraph url::', this.dashboardUrl);
+            this.disableAllTabs();
+            this.isTab4Active = true;
+          } else {
+            this.dashboardUrl = this.constants.subgraphDashboard;
+            this.disableAllTabs();
+            this.isTab4Active = true;
+          }
+        } else {
+          this.router.navigate(['/subgraph']);
+        }
+
         break;
       }
       default: {
@@ -135,14 +188,22 @@ export class ThegraphComponent implements OnInit {
           url =
             typeOfAddress === 'indexer'
               ? url + `indexer_address=${address}&`
-              : url + `id=${address}&`;
+              : typeOfAddress === 'delegator'
+              ? url + `id=${address}&`
+              : typeOfAddress === 'curator'
+              ? url + `curator=${address}`
+              : url + `subgraph_deployment=${address}`;
         });
       }
     } else {
       url =
         typeOfAddress === 'indexer'
           ? url + `indexer_address=${this.arrayOfAaddresses}`
-          : url + `id=${this.arrayOfAaddresses}`;
+          : typeOfAddress === 'delegator'
+          ? url + `id=${this.arrayOfAaddresses}`
+          : typeOfAddress === 'curator'
+          ? url + `curator=${this.arrayOfAaddresses}`
+          : url + `subgraph_deployment=${this.arrayOfAaddresses}`;
     }
     return url;
   }

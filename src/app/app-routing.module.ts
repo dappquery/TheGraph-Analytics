@@ -24,6 +24,18 @@ const routes: Routes = [
     path: 'curator',
     component: ThegraphComponent,
   },
+  {
+    path: 'curator/:id',
+    component: ThegraphComponent,
+  },
+  {
+    path: 'subgraph',
+    component: ThegraphComponent,
+  },
+  {
+    path: 'subgraph/:id',
+    component: ThegraphComponent,
+  },
   { path: '**', redirectTo: '/indexer' },
 ];
 
